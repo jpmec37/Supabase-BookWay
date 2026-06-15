@@ -1,0 +1,1196 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chonburi&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Chonburi&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookway</title>
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+  </head>
+  <body>
+    <aside class="blateral">
+      <div class="open-close">
+        <button id="bttn-oc" class="bttn-oc">☰</button>
+      </div>
+      <div class="side-bttns">
+        <ul>
+          <li class="active">
+            <a href="./home.html">
+              <img
+                src="./imagens/Vetores/PaginaInicialVetor.svg"
+                class="sidebar-icon"
+                alt="Inicial"
+              />
+              <span>Inicial</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="comunity.html">
+              <img
+                src="./imagens/Vetores/ComunidadeVetor.svg"
+                class="sidebar-icon"
+                alt="Comunidade"
+              />
+              <span>Comunidade</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="quests.html">
+              <img
+                src="./imagens/Vetores/DesafiosVetor.svg"
+                class="sidebar-icon"
+                alt="Desafios"
+              />
+              <span>Desafios</span>
+            </a>
+          </li>
+          <li>
+            <a href="./settings.html">
+              <img
+                src="./imagens/Vetores/ConfiguracoesVetor.svg"
+                class="sidebar-icon"
+                alt="Configurações"
+              />
+              <span>Configurações</span>
+            </a>
+          </li>
+          <li class="expand-only item-usuario">
+            <a href="user.html">
+              <img
+                src="/Site/imagens/User.jpg"
+                alt="Logo"
+                class="sidebar-icon user-avatar"
+              />
+              <span>Perfil</span>
+            </a>
+          </li>
+          <li class="expand-only">
+            <a href="./bookshelf.html" class="">
+              <img
+                src="./imagens/Vetores/EstanteVetor.svg"
+                class="sidebar-icon"
+                alt="Configurações"
+              />
+              <span>Estante</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="create-comunity expand-only">
+        <a href="#" id="btn-abrir-meu-modal" class="create-comunity" style="position: relative; z-index: 999999;">
+
+          <img
+            src="./imagens/Vetores/ComunidadeVetor.svg"
+            class="sidebar-icon"
+            alt="Ícone"
+          />
+  <div class="comunity-info">
+    <span class="comunity-title">Criar Comunidade</span>
+    <span class="comunity-subtitle">Crie suas conexões</span>
+  </div>
+</a>
+      </div>
+      <div class="logout">
+        <a href="singin.html"
+          ><button class="bttn-logout">
+            <img
+              src="./imagens/Vetores/SignOutVetor.svg"
+              alt=""
+              class="sidebar-icon"
+            /></button
+        ></a>
+      </div>
+    </aside>
+    <main class="container">
+      <header class="header">
+        <div>
+          <a href="./home.html" id="logo">
+            <img
+              src="/Site/imagens/logo.jpg"
+              alt="Logo"
+              width="40"
+              height="40"
+              id="imglogo"
+            />
+            <img
+              src="/Site/imagens/bookway.png"
+              alt="Logo"
+              width="140"
+              height="29"
+              id="imgtexto"
+            />
+          </a>
+        </div>
+        <div class="barra-pesquisa">
+          <form id="barrapesquisa">
+            <div id="filtro">
+              <select id="f-header">
+                <option value="todos">Todos</option>
+                <option value="audiobooks">Audiobooks</option>
+                <option value="hqs">HQ's</option>
+                <option value="mangas">Mangás</option>
+              </select>
+            </div>
+            <input type="text" placeholder="Search" id="s-header" />
+            <input type="submit" value="" id="b-header" name="Pesquisar" />
+          </form>
+        </div>
+        <div id="sec-user">
+          <div id="seq">
+            <a href="#" id="txt-user">
+              <p>45</p>
+              <img
+                src="./imagens/Vetores/FireVetor.svg"
+                alt="Logo"
+                width="20"
+                height="20"
+                id="seq-fire"
+                class="fire-icon"
+              />
+            </a>
+          </div>
+          <div id="g-icon-user">
+            <a href="#">
+              <img
+                src="/Site/imagens/User.jpg"
+                alt="Logo"
+                width="40"
+                height="40"
+                id="pic-user"
+              />
+            </a>
+          </div>
+        </div>
+      </header>
+      <nav class="navegacao">
+        <div></div>
+        <div class="ul-nav">
+          <ul>
+            <li>
+              <a href="helpcenterhome.html"><span>Central de Ajuda</span></a>
+            </li>
+            <li>
+              <a href="about.html"><span>Sobre</span></a>
+            </li>
+            <li>
+              <a href="contacts.html"><span>Contato</span></a>
+            </li>
+            <li>
+              <a href="premium.html"><span>Premium</span></a>
+            </li>
+          </ul>
+        </div>
+        <div></div>
+      </nav>
+      <section class="conteudo">
+        <div class="hero-carousel" id="hero-carousel">
+          <div class="hero-carousel-track" id="hero-track">
+            <div class="hero-slide">
+              <img
+                src="./imagens/LendoLivro.jpg"
+                alt="Destaque 1"
+              />
+              <div class="hero-content">
+                <span class="hero-badge">DESCUBRA</span>
+                <h2>Milhares de histórias em um só lugar</h2>
+                <p>
+                  Explore um catálogo repleto de livros para todos os gostos. Encontre novos autores, acompanhe suas leituras e mergulhe em histórias inesquecíveis. Experimente 30 dias grátis.
+                </p>
+              </div>
+            </div>
+
+            <div class="hero-slide">
+              <img
+                src="./imagens/Biblioteca1.jpg"
+                alt="Destaque 2"
+              />
+              <div class="hero-content">
+                <span class="hero-badge">LEIA</span>
+                <h2>Sua próxima grande leitura começa aqui</h2>
+                <p>
+                  Dos clássicos aos lançamentos, encontre livros que combinam com você. Organize suas leituras e descubra novas aventuras a cada página. Experimente 30 dias grátis.
+                </p>
+              </div>
+            </div>
+
+            <div class="hero-slide">
+              <img
+                src="./imagens/EscolhendoLivro.jpg"
+                alt="Destaque 3"
+              />
+              <div class="hero-content">
+                <span class="hero-badge">EXPLORE</span>
+                <h2>Um universo de livros ao seu alcance</h2>
+                <p>
+                  Navegue por diferentes gêneros, descubra recomendações personalizadas e encontre histórias que vão prender sua atenção do início ao fim. Experimente 30 dias grátis.
+                </p>
+              </div>
+            </div>
+
+            <div class="hero-slide">
+              <img
+                src="./imagens/LendoLuzQuente.jpg"
+                alt="Destaque 4"
+              />
+              <div class="hero-content">
+                <span class="hero-badge">MERGULHE</span>
+                <h2>Histórias que acompanham você</h2>
+                <p>
+                  Descubra livros incríveis, salve seus favoritos e encontre sua próxima leitura em poucos cliques. Tudo o que você precisa para ler mais e melhor. Experimente 30 dias grátis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-controls">
+            <button class="hero-arrow" id="hero-prev">
+              <img
+                src="./imagens/Vetores/SetaEsquerdaVetor.svg"
+                alt="Anterior"
+                class="sidebar-icon"
+              />
+            </button>
+
+            <div class="hero-indicators" id="hero-indicators"></div>
+
+            <button class="hero-arrow" id="hero-next">
+              <img
+                src="./imagens/Vetores/SetaDireitaVetor.svg"
+                alt="Próximo"
+                class="sidebar-icon"
+              />
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <h1>Vistos Recentemente</h1>
+          <section class="secao-horizontal">
+            <button class="btn-scroll-left">
+              <img
+                src="./imagens/Vetores/SetaEsquerdaVetor.svg"
+                alt=""
+                class="sidebar-icon"
+              />
+            </button>
+            <div class="book-row">
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="/Site/imagens/Frieren.png"
+                  alt="imagem do livro"
+                  title="Frieren e a Jornada Para o Além - 02"
+                  author="por Kamachi, Koyoharu Gotouge"
+                  description="Frieren é uma aventureira que viaja com seu grupo de amigos em busca de conhecimento e descobertas."
+                />
+                <div class="card-overlay">
+                  <div class="user-book-progress" data-book-id="livro-01">
+                    <p class="card-text text-pages">0/0 </p>
+                    <div class="book-progress">
+                      <div class="progress-bar fill-bar"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="/Site/imagens/Hellsing.png"
+                  alt="imagem do livro"
+                  title="Hellsing Especial Vol. 01: 1"
+                  author="por Koyoharu Gotouge"
+                  description="A Agência Hellsing é uma organização que tem a missão de acabar com criaturas que ameaçam o Império Britânico e a Igreja Protestante. Integra é a herdeira da família Hellsing designada para dirigir a organização. Ela é a mestra de Alucard, o poderoso vampiro e “arma secreta” da agência que enfrenta as mais terríveis criaturas sobrenaturais. Hellsing é uma aventura de muito suspense e lutas alucinantes!"
+                />
+                <div class="card-overlay">
+                  <div class="user-book-progress" data-book-id="livro-02">
+                    <p class="card-text text-pages">0/0 </p>
+                    <div class="book-progress">
+                      <div class="progress-bar fill-bar"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn-scroll-right">
+              <img
+                src="./imagens/Vetores/SetaDireitaVetor.svg"
+                alt=""
+                class="sidebar-icon"
+              />
+            </button>
+          </section>
+        </div>
+        <!-- --------------------------------------------- -->
+        <div class="row">
+          <div class="titulocomunidade">
+            <h1>Comunidades famosas</h1>
+            <a href="./comunity.html">Ver Mais</a>
+          </div>
+          <div class="comunidade-row">
+            <div class="comunidade">
+              <img
+                src="/Site/imagens/hellsingcomunidade.png"
+                alt="Foto da comunidade"
+                data-comm-title="Comunidade Hellsing"
+                data-comm-badge="Manga"
+                data-comm-members="5k membros"
+                data-comm-desc="Comunidade focada em discussões sobre a série Hellsing, incluindo análises de personagens, enredos e temas sombrios."
+              />
+              <div class="comunidade-overlay">
+                <h2 class="comunidade-text">Comunidade Hellsing</h2>
+                <p class="comunidade-text">5k membros</p>
+              </div>
+            </div>
+
+            <div class="comunidade">
+              <img
+                class="card-top"
+                src="/Site/imagens/jojo.png"
+                alt="imagem da comunidade"
+                data-comm-title="Comunidade Jojo's Bizarre Adventure"
+                data-comm-badge="Manga"
+                data-comm-members="12k membros"
+                data-comm-desc="Comunidade focada em discussões sobre a série Jojo's Bizarre Adventure, incluindo análises de personagens, enredos e temas."
+              />
+              <div class="comunidade-overlay">
+                <h2 class="comunidade-text">Comunidade Jojo's Bizarre Adventure</h2>
+                <p class="comunidade-text">12k membros</p>
+              </div>
+            </div>
+
+            <div class="comunidade">
+              <img
+                class="card-top"
+                src="/Site/imagens/jujutsu.png"
+                alt="imagem da comunidade"
+                data-comm-title="Comunidade de Jujutsu Kaisen"
+                data-comm-badge="Manga"
+                data-comm-members="3.2k membros"
+                data-comm-desc="Discussões profundas sobre a série Jujutsu Kaisen, incluindo análises de personagens, enredos e temas."
+              />
+              <div class="comunidade-overlay">
+                <h2 class="comunidade-text">Comunidade de Jujutsu Kaisen</h2>
+                <p class="comunidade-text">3.2k membros</p>
+              </div>
+            </div>
+
+            <div class="comunidade">
+              <img
+                class="card-top"
+                src="/Site/imagens/leitura.png"
+                alt="imagem da comunidade"
+                data-comm-title="Comunidade de Leitura"
+                data-comm-badge="Leitura em Geral"
+                data-comm-members="8k membros"
+                data-comm-desc="Leitura em geral, de clássicos a lançamentos. Compartilhe suas opiniões e descubra novas obras com outros apaixonados por livros."
+              />
+              <div class="comunidade-overlay">
+                <h2 class="comunidade-text">Comunidade de Leitura</h2>
+                <p class="comunidade-text">8k membros</p>
+              </div>
+            </div>
+
+            <div class="comunidade">
+              <img
+                class="card-top"
+                src="/Site/imagens/percyjackson.png"
+                alt="imagem da comunidade"
+                data-comm-title="Comunidade de Percy Jackson"
+                data-comm-badge="Fantasia"
+                data-comm-members="15k membros"
+                data-comm-desc="Comunidade focada em discussões sobre a série Percy Jackson, incluindo análises de personagens, enredos e temas mitológicos."
+              />
+              <div class="comunidade-overlay">
+                <h2 class="comunidade-text">Comunidade de Percy Jackson</h2>
+                <p class="comunidade-text">15k membros</p>
+              </div>
+            </div>
+
+            <div class="comunidade">
+              <img
+                class="card-top"
+                src="/Site/imagens/starwars.png"
+                alt="imagem da comunidade"
+                data-comm-title="Comunidade de Star Wars"
+                data-comm-badge="Fantasia"
+                data-comm-members="6.4k membros"
+                data-comm-desc="Comunidade focada em discussões sobre a série Star Wars, incluindo análises de personagens, enredos e temas de ficção científica e fantasia."
+              />
+              <div class="comunidade-overlay">
+                <h2 class="comunidade-text">Comunidade de Star Wars</h2>
+                <p class="comunidade-text">6.4k membros</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- --------------------------------------------- -->
+
+        <div class="row">
+          <h1>Mangás</h1>
+          <section class="secao-horizontal">
+            <button class="btn-scroll-left">
+              <img
+                src="./imagens/Vetores/SetaEsquerdaVetor.svg"
+                alt=""
+                class="sidebar-icon"
+              />
+            </button>
+            <div class="book-row">
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="/Site/imagens/manga.jpg"
+                  alt="imagem do livro"
+                  title="Demon Slayer - Vol. 1"
+                  author="por Koyoharu Gotouge"
+                  description="Tanjiro sai em uma jornada para se tornar um caçador de demônios e salvar sua irmã Nezuko, que foi transformada em um monstro."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="/Site/imagens/AttackOnTitan.png"
+                  alt="imagem do livro"
+                  title="Attack on Titan Sampler (English Edition)"
+                  author="por Hajime Isayama"
+                  description="Eren, Mikasa e Armin lutam para sobreviver contra os Titãs gigantes que destruíram sua cidade."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="/Site/imagens/DanDaDan.png"
+                  alt="imagem do livro"
+                  title="Dandadan 01"
+                  author="por Koyoharu Gotouge"
+                  description="Um garoto que pode se transformar em um demônio e luta contra outros seres sobrenaturais."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="/Site/imagens/DeathNote.png"
+                  alt="imagem do livro"
+                  title="Death Note - Black Edition - Volume 1"
+                  author="por Tsugumi Ohba"
+                  description="Light Yagami encontra um caderno misterioso que permite matar pessoas apenas escrevendo seus nomes."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="/Site/imagens/Frieren.png"
+                  alt="imagem do livro"
+                  title="Frieren e a Jornada Para o Além - 02"
+                  author="por Kamachi, Koyoharu Gotouge"
+                  description="Frieren é uma aventureira que viaja com seu grupo de amigos em busca de conhecimento e descobertas."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="/Site/imagens/Hellsing.png"
+                  alt="imagem do livro"
+                  title="Hellsing Especial Vol. 01: 1"
+                  author="por Koyoharu Gotouge"
+                  description="A Agência Hellsing é uma organização que tem a missão de acabar com criaturas que ameaçam o Império Britânico e a Igreja Protestante. Integra é a herdeira da família Hellsing designada para dirigir a organização. Ela é a mestra de Alucard, o poderoso vampiro e “arma secreta” da agência que enfrenta as mais terríveis criaturas sobrenaturais. Hellsing é uma aventura de muito suspense e lutas alucinantes!"
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="/Site/imagens/HunterXHunter.png"
+                  alt="imagem do livro"
+                  title="Hunter X Hunter - Vol. 1"
+                  author="por Togashi Yoshihiro"
+                  description="Gon Fiedler é um garoto que deseja se tornar um caçador de Hunter para encontrar seu pai."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="/Site/imagens/SteelBallRun.png"
+                  alt="imagem do livro"
+                  title="Jojo's bizarre adventure – Parte 7 – Steel ball run 01"
+                  author="por Togashi Yoshihiro"
+                  description="Um garoto que pode se transformar em um demônio e luta contra outros seres sobrenaturais."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="/Site/imagens/ThePromisedNeverland.png"
+                  alt="imagem do livro"
+                  title="The promised neverland vol. 1"
+                  author="por Koyoharu Gotouge"
+                  description="Um garoto que pode se transformar em um demônio e luta contra outros seres sobrenaturais."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="/Site/imagens/YourName.png"
+                  alt="imagem do livro"
+                  title="Your name"
+                  author="por Koyoharu Gotouge"
+                  description="Um garoto que pode se transformar em um demônio e luta contra outros seres sobrenaturais."
+                />
+              </div>
+            </div>
+            <button class="btn-scroll-right">
+              <img
+                src="./imagens/Vetores/SetaDireitaVetor.svg"
+                alt=""
+                class="sidebar-icon"
+              />
+            </button>
+          </section>
+        </div>
+        <!-- --------------------------------------------- -->
+        <div class="row">
+          <h1>Recomendações</h1>
+          <section class="secao-horizontal">
+            <button class="btn-scroll-left">
+              <img
+                src="./imagens/Vetores/SetaEsquerdaVetor.svg"
+                alt=""
+                class="sidebar-icon"
+              />
+            </button>
+            <div class="book-row">
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="./imagens/BatmanBegins.png"
+                  alt="imagem do livro"
+                  title="Batman Begins"
+                  author="Dennis O'Neil"
+                  description="A origem do Cavaleiro das Trevas, mostrando o treinamento de Bruce Wayne e sua luta para salvar Gotham da Liga das Sombras."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="./imagens/DomQuixote.png"
+                  alt="imagem do livro"
+                  title="Dom Quixote"
+                  author="Miguel de Cervantes"
+                  description="As aventuras de um fidalgo que enlouquece lendo romances de cavalaria e decide se tornar um cavaleiro andante."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="./imagens/Duna.png"
+                  alt="imagem do livro"
+                  title="Duna"
+                  author="Frank Herbert"
+                  description="A jornada épica de Paul Atreides no planeta desértico de Arrakis, em meio a intrigas políticas e o controle da valiosa especiaria."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="./imagens/Hobbit.png"
+                  alt="imagem do livro"
+                  title="Hobbit"
+                  author="J.R.R. Tolkien"
+                  description="A fantástica aventura de Bilbo Bolseiro e um grupo de anões para recuperar um tesouro guardado pelo temível dragão Smaug."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="./imagens/MemoriasdoSubsolo.png"
+                  alt="imagem do livro"
+                  title="Memorias do Subsolo"
+                  author="Fiódor Dostoiévski"
+                  description="O monólogo intenso e amargurado de um homem isolado da sociedade, questionando a razão, o livre-arbítrio e a natureza humana."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="./imagens/MonteCristo.png"
+                  alt="imagem do livro"
+                  title="Monte Cristo"
+                  author="Alexandre Dumas"
+                  description="A história de vingança implacável de Edmond Dantès, um marinheiro injustamente preso que escapa e enriquece."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="./imagens/OsMiseraveis.png"
+                  alt="imagem do livro"
+                  title="Os Miseraveis"
+                  author="Victor Hugo"
+                  description="A comovente saga de redenção do ex-prisioneiro Jean Valjean na França do século XIX."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="./imagens/ResidentEvil.png"
+                  alt="imagem do livro"
+                  title="Resident Evil"
+                  author="Capcom / Zino"
+                  description="Agentes especiais lutam contra surtos de armas biológicas, zumbis e corporações farmacêuticas corruptas."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="./imagens/ScottPilgrim.png"
+                  alt="imagem do livro"
+                  title="Scott Pilgrim"
+                  author="Bryan Lee O'Malley"
+                  description="A hilária batalha de um jovem preguiçoso contra a Liga dos Sete Ex-Namorados do Mal para conquistar a garota de seus sonhos."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="./imagens/SpiderMan.png"
+                  alt="imagem do livro"
+                  title="SpiderMan"
+                  author="Stan Lee e Steve Ditko"
+                  description="As aventuras do jovem Peter Parker, que adquire poderes proporcionais aos de uma aranha e passa a combater o crime."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="./imagens/VidasSecas.png"
+                  alt="imagem do livro"
+                  title="Vidas Secas"
+                  author="Graciliano Ramos"
+                  description="O retrato cru e realista de uma família de retirantes que luta pela sobrevivência no sertão nordestino castigado pela seca."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="./imagens/XMen.png"
+                  alt="imagem do livro"
+                  title="X-Men"
+                  author="Stan Lee e Jack Kirby"
+                  description="Um grupo de heróis mutantes luta para proteger um mundo que os teme e odeia."
+                />
+              </div>
+              <div class="book">
+                <img
+                  class="card-top"
+                  src="./imagens/TheWalkingDead.png"
+                  alt="imagem do livro"
+                  title="The Walking Dead"
+                  author="Robert Kirkman"
+                  description="A angustiante jornada de um grupo de sobreviventes em um mundo pós-apocalíptico dominado por mortos-vivos."
+                />
+              </div>
+            </div>
+            <button class="btn-scroll-right">
+              <img
+                src="./imagens/Vetores/SetaDireitaVetor.svg"
+                alt=""
+                class="sidebar-icon"
+              />
+            </button>
+          </section>
+        </div>
+        <div id="book-modal" class="modal-overlay">
+          <div class="modal-container">
+            <button class="modal-close-btn" id="close-modal">&times;</button>
+
+            <div class="modal-left-col">
+              <div class="book-cover-wrapper">
+                <img
+                  src="./imagens/livros/1984.jpg"
+                  alt="Capa do Livro"
+                  class="modal-book-cover"
+                  id="modal-cover-img"
+                />
+              </div>
+            </div>
+
+            <div class="modal-right-col">
+              <h2 class="modal-book-title" id="modal-title">Dom Casmurro</h2>
+              <p class="modal-book-author" id="modal-author">
+                por Machado de Assis
+              </p>
+
+              <div class="modal-rating">
+                <span class="rating-number">4.6</span>
+                <div class="stars">
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9734;</span>
+                </div>
+              </div>
+
+              <p class="modal-synopsis" id="modal-description">
+                Bentinho conta a história de seu amor por Capitu e a dúvida que
+                o consome. Seria Capitu inocente ou culpada? Um dos maiores
+                clássicos da literatura brasileira.
+              </p>
+              <div class="div-bttns">
+                <button class="modal-btn-read" onclick="irParaLeitura()">
+                  LER
+                </button>
+                <button class="modal-btn-bs" onclick="irParaLeitura()">
+                  <img class="sidebar-icon" src="./imagens/Vetores/EstanteVetor.svg">
+                </button>
+              </div>
+              <hr class="modal-divider" />
+
+              <div class="modal-comments-section">
+                <h3>Comentários e recomendações</h3>
+
+                <div class="comment-card">
+                  <div class="comment-header">
+                    <div class="user-info">
+                      <img
+                        src="/Site/imagens/comunidade teste.jpg"
+                        alt="Avatar Usuário"
+                        class="comment-avatar"
+                      />
+                      <div class="user-meta">
+                        <span class="username">Luana Silva S.</span>
+                        <span class="user-stats">214 seguidores</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="comment-text">
+                    Machado de Assis é um autor genial conhecido por sua
+                    ambiguidade narrativa, com destaque para a psicologia dos
+                    personagens... <span class="read-more">Ler mais</span>
+                  </p>
+                </div>
+
+                <div class="comment-card">
+                  <div class="comment-header">
+                    <div class="user-info">
+                      <img
+                        src="/Site/imagens/comunidade teste.jpg"
+                        alt="Avatar Usuário"
+                        class="comment-avatar"
+                      />
+                      <div class="user-meta">
+                        <span class="username">Luan Rilva R.</span>
+                        <span class="user-stats">27 seguidores</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="comment-text">
+                    Uma obra fantástica que faz o leitor se transformar em um
+                    verdadeiro jurado. Vale cada capítulo lido...
+                    <span class="read-more">Ler mais</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="community-modal" class="comm-modal-overlay">
+          <div class="comm-modal-container">
+            <button type="button" id="close-comm-modal" class="comm-close-btn">
+              &times;
+            </button>
+
+            <div class="comm-modal-scrollable-content">
+              <div class="comm-modal-banner">
+                <img id="comm-modal-img" src="" alt="Capa da Comunidade" />
+              </div>
+
+              <div class="comm-modal-body">
+                <h2 id="comm-modal-title" class="comm-title">
+                  Nome da Comunidade
+                </h2>
+                <div class="comm-members-count">
+                  <i class="fa-solid fa-users"></i>
+                  <span id="comm-modal-members">0 membros</span>
+                </div>
+
+                <p id="comm-modal-description" class="comm-description">
+                  Descrição da comunidade aqui...
+                </p>
+
+                <div class="comm-actions">
+                  <button type="button" class="btn-visit">
+                    <span>&rarr;</span> Visitar Comunidade
+                  </button>
+                  <button type="button" class="btn-subscribe">
+                    <span class="icon-sub">+</span> Inscrever-se
+                  </button>
+                </div>
+
+                <div class="comm-comments-section">
+                  <h3>
+                    <span class="comment-icon">&#x1F4AC;</span> Comentários da
+                    comunidade
+                  </h3>
+                  <div class="comm-comments-list">
+                    <div class="comm-comment-card">
+                      <img
+                        src="/Site/imagens/perfil1.jpg"
+                        alt="Avatar"
+                        class="comm-avatar"
+                      />
+                      <div class="comm-comment-content">
+                        <h4>João Pedro</h4>
+                        <p>Melhor comunidade pra trocar dicas de leitura.</p>
+                        <span class="comm-likes">&#x1F44D; 20</span>
+                      </div>
+                    </div>
+
+                    <div class="comm-comment-card">
+                      <img
+                        src="/Site/imagens/perfil2.jpg"
+                        alt="Avatar"
+                        class="comm-avatar"
+                      />
+                      <div class="comm-comment-content">
+                        <h4>Luísa Fernanda</h4>
+                        <p>Já fiz amizades incríveis aqui dentro!</p>
+                        <span class="comm-likes">&#x1F44D; 15</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footerbusca">
+        <div class="footer-links">
+          <button type="button" id="backtop" class="negrito">
+            Voltar ao Topo
+          </button>
+        </div>
+        <div class="footer-links"><a href="home.html">Audiobooks</a></div>
+        <div class="footer-links"><a href="home.html">HQ's</a></div>
+        <div class="footer-links"><a href="home.html">Mangás</a></div>
+      </div>
+      <div class="footerbusca">
+        <div class="footer-links">
+          <a href="home.html" class="negrito">Institucional</a>
+        </div>
+        <div class="footer-links"><a href="home.html">Quem somos</a></div>
+        <div class="footer-links">
+          <a href="home.html">Direitos autorais</a>
+        </div>
+        <div class="footer-links">
+          <a href="home.html">Programa de integridade</a>
+        </div>
+        <div class="footer-links"><a href="home.html">Imprensa</a></div>
+      </div>
+      <div class="footerbusca">
+        <div class="footer-links">
+          <a href="home.html" class="negrito">Ajuda</a>
+        </div>
+        <div class="footer-links"><a href="home.html">Central de ajuda</a></div>
+        <div class="footer-links">
+          <a href="home.html">Segurança e Privacidade</a>
+        </div>
+        <div class="footer-links">
+          <a href="home.html">Política de Privacidade</a>
+        </div>
+        <div class="footer-links">
+          <a href="home.html">Termos de uso do comprador</a>
+        </div>
+        <div class="footer-links"><a href="home.html">Acessibilidade</a></div>
+      </div>
+      <div class="redes">
+        <div class="imagem">
+          <img src="imagens/logo.jpg" alt="Logo BookWay" width="44px" />
+          <img src="imagens/bookway.png" alt="Texto BookWay" width="140px" />
+        </div>
+        <p class="txt-redes">Siga-nos nas redes sociais</p>
+        <div class="redes-sociais">
+          <a
+            href="https://www.facebook.com/bookway"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="imagens/Vetores/FacebookLogo.svg"
+              alt="Facebook"
+              width="28px"
+              class="trocarcor"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/bookway"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="imagens/Vetores/InstagramLogo.svg"
+              alt="Instagram"
+              width="28px"
+              class="trocarcor"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/bookway"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="imagens/Vetores/LinkedinLogo.svg"
+              alt="LinkedIn"
+              width="28px"
+              class="trocarcor"
+            />
+          </a>
+        </div>
+        <div class="redes-sociais">
+          <a
+            href="https://www.threads.net/@bookway"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="imagens/Vetores/ThreadsLogo.svg"
+              alt="Threads"
+              width="28px"
+              class="trocarcor"
+            />
+          </a>
+          <a
+            href="https://www.tiktok.com/@bookway"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="imagens/Vetores/TiktokLogo.svg"
+              alt="TikTok"
+              width="28px"
+              class="trocarcor"
+            />
+          </a>
+          <a
+            href="https://www.x.com/bookway"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="imagens/Vetores/XLogo.svg"
+              alt="X"
+              width="28px"
+              class="trocarcor"
+            />
+          </a>
+        </div>
+        <div class="redes-sociais">
+          <a
+            href="https://www.discord.com/invite/bookway"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="imagens/Vetores/DiscordLogo.svg"
+              alt="Discord"
+              width="28px"
+              class="trocarcor"
+            />
+          </a>
+          <a
+            href="https://www.youtube.com/c/BookWay"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="imagens/Vetores/YoutubeLogo.svg"
+              alt="YouTube"
+              width="28px"
+              class="trocarcor"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script src="./JS/script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // 1. Encontra os elementos
+        const btnAbrir = document.getElementById('btn-abrir-meu-modal');
+        const modal = document.getElementById('bw-create-modal');
+        const btnFechar = document.getElementById('bw-modal-close');
+        const form = document.getElementById('bw-create-form');
+
+        // 2. ABRIR MODAL (E BLOQUEAR O CLIQUE FANTASMA)
+        if (btnAbrir && modal) {
+          btnAbrir.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            e.stopPropagation(); // ISTO IMPEDE O DOM CASMURRO DE ABRIR!
+            
+            modal.classList.add('active'); // O teu CSS modal.css precisa desta classe para ficar visível
+            document.body.style.overflow = 'hidden'; // Trava o scroll da página
+          });
+        }
+
+        // 3. FECHAR MODAL
+        function fecharModal() {
+          if (modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        }
+        
+        if (btnFechar) btnFechar.addEventListener('click', fecharModal);
+        
+        // Fecha se clicares no fundo escuro
+        if (modal) {
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) fecharModal();
+          });
+        }
+
+        // 4. CRIAR A COMUNIDADE E IR PARA COMUNITY.HTML
+        if (form) {
+          form.addEventListener('submit', (e) => {
+            e.preventDefault(); // Impede a página de piscar/recarregar
+            
+            // Pega nos dados do teu formulário (do ficheiro modal.html que colaste)
+            const nome = document.getElementById('bw-comm-name').value.trim();
+            const desc = document.getElementById('bw-comm-desc').value.trim();
+            const colorInput = document.getElementById('bw-comm-color');
+            const imageInput = document.getElementById('bw-comm-image');
+
+            // Prepara a imagem (se estiver vazio, usa uma padrão)
+            let imagemURL = 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=400';
+            if (imageInput && imageInput.value.trim() !== '') {
+               imagemURL = imageInput.value.trim();
+            }
+
+            // Cria o objeto
+            const novaComunidade = {
+              id: 'comm-' + Date.now(),
+              name: nome,
+              desc: desc || '',
+              color: colorInput ? colorInput.value : '#3b82f6',
+              image: imagemURL
+            };
+
+            // Guarda nas chaves certas do teu comunity.js
+            const salvas = JSON.parse(localStorage.getItem('bw6_communities_v1') || '[]');
+            salvas.push(novaComunidade);
+            localStorage.setItem('bw6_communities_v1', JSON.stringify(salvas));
+            localStorage.setItem('bw6_active_comm_v1', novaComunidade.id);
+
+            // Redireciona!
+            fecharModal();
+            window.location.href = 'comunity.html';
+          });
+        }
+      });
+      // Função para visitar uma comunidade existente
+  function visitarComunidade(idDaComunidade) {
+    // 1. Diz ao navegador qual é a comunidade que vai ficar "ativa"
+    localStorage.setItem('bw6_active_comm_v1', idDaComunidade);
+    
+    // 2. Redireciona para a página de comunidades
+    window.location.href = 'comunity.html';
+  }
+  // Esta função é chamada quando clica num botão "Visitar Comunidade"
+      window.visitarComunidade = function(idDaComunidade) {
+        
+        // 1. Grava na memória do navegador a comunidade que você escolheu
+        // A chave tem que ser exatamente a mesma que o comunity.js lê
+        localStorage.setItem('bw6_active_comm_v1', idDaComunidade);
+        
+        // 2. Manda você para a página de comunidades
+        window.location.href = 'comunity.html';
+      };
+    </script>
+    <div id="bw-create-modal" class="bw-modal-overlay" aria-hidden="true">
+  <div class="bw-modal" role="dialog" aria-modal="true" aria-labelledby="bw-modal-title">
+    <div class="bw-modal-header">
+      <div>
+        <div class="bw-modal-kicker">BookWay</div>
+        <h2 class="bw-modal-title" id="bw-modal-title">Criar Nova Comunidade</h2>
+      </div>
+      <button type="button" id="bw-modal-close" class="bw-modal-close" aria-label="Fechar">
+        <!-- X em SVG -->
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <form id="bw-create-form" class="bw-modal-form">
+      <label class="bw-label" for="bw-comm-name">Nome da comunidade</label>
+      <input
+        id="bw-comm-name"
+        name="name"
+        type="text"
+        required
+        placeholder="Ex: Círculo de Leitores"
+      />
+
+      <label class="bw-label" for="bw-comm-desc">Descrição curta</label>
+      <textarea
+        id="bw-comm-desc"
+        name="desc"
+        required
+        placeholder="O que você discute aqui?"
+      ></textarea>
+
+      <div class="bw-grid-2">
+        <div>
+          <label class="bw-label" for="bw-comm-color">Cor principal</label>
+          <div class="bw-color-row">
+            <input id="bw-comm-color" name="color" type="color" value="#3b82f6" />
+            <span id="bw-comm-color-hex" class="bw-hex">#3B82F6</span>
+          </div>
+        </div>
+
+        <div>
+          <label class="bw-label" for="bw-comm-image">URL da imagem (ícone/avatar)</label>
+          <input
+            id="bw-comm-image"
+            name="image"
+            type="url"
+            placeholder="https://..."
+          />
+        </div>
+      </div>
+
+      <button type="submit" class="bw-primary-btn">
+        Criar comunidade
+      </button>
+
+      <p class="bw-help">Dica: a imagem pode ser vazia. Nesse caso, usamos um ícone interno em SVG.</p>
+    </form>
+  </div>
+</div>
+  </body>
+</html>

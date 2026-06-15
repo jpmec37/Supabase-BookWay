@@ -1,0 +1,64 @@
+<!-- modal.html -->
+<div id="bw-create-modal" class="bw-modal-overlay" aria-hidden="true">
+  <div class="bw-modal" role="dialog" aria-modal="true" aria-labelledby="bw-modal-title">
+    <div class="bw-modal-header">
+      <div>
+        <div class="bw-modal-kicker">BookWay</div>
+        <h2 class="bw-modal-title" id="bw-modal-title">Criar Nova Comunidade</h2>
+      </div>
+      <button type="button" id="bw-modal-close" class="bw-modal-close" aria-label="Fechar">
+        <!-- X em SVG -->
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <form id="bw-create-form" class="bw-modal-form">
+      <label class="bw-label" for="bw-comm-name">Nome da comunidade</label>
+      <input
+        id="bw-comm-name"
+        name="name"
+        type="text"
+        required
+        placeholder="Ex: Círculo de Leitores"
+      />
+
+      <label class="bw-label" for="bw-comm-desc">Descrição curta</label>
+      <textarea
+        id="bw-comm-desc"
+        name="desc"
+        required
+        placeholder="O que você discute aqui?"
+      ></textarea>
+
+      <div class="bw-grid-2">
+        <div>
+          <label class="bw-label" for="bw-comm-color">Cor principal</label>
+          <div class="bw-color-row">
+            <input id="bw-comm-color" name="color" type="color" value="#3b82f6" />
+            <span id="bw-comm-color-hex" class="bw-hex">#3B82F6</span>
+          </div>
+        </div>
+
+        <div>
+          <label class="bw-label" for="bw-comm-image">URL da imagem (ícone/avatar)</label>
+          <input
+            id="bw-comm-image"
+            name="image"
+            type="url"
+            placeholder="https://..."
+          />
+        </div>
+      </div>
+
+      <button type="submit" class="bw-primary-btn">
+        Criar comunidade
+      </button>
+
+      <p class="bw-help">Dica: a imagem pode ser vazia. Nesse caso, usamos um ícone interno em SVG.</p>
+    </form>
+  </div>
+</div>
+

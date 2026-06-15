@@ -1,0 +1,142 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+header {
+  background: rgba(0, 5, 53, 0.2);
+  backdrop-filter: blur(30px) brightness(0.7);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 70px;
+}
+
+body {
+    background-image: url('/Site/imagens/fundo.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: inter, sans-serif;
+    
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 80px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: calc(100vh - 150px); /* Ocupa a tela inteira descontando o header */
+}
+
+header ul {
+  list-style-type: none;
+  display: flex;
+  gap: 50px;
+  padding: 50px;
+  margin: 0;
+}
+
+header a {
+  text-decoration: none;
+  color: #f5f5dc;
+}
+
+/* ==========================================================================
+   CONTAINER PRINCIPAL E ESTRUTURA DE CONTEÚDO
+   ========================================================================== */
+
+.container {
+    margin-top: 50px; 
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 180px);
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.contact-container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px;
+    min-width: 250px;
+    max-width: 400px;
+    color: white;
+}
+
+
+.contact-container1 .chat-link {
+    color: #64b5f6; 
+    text-decoration: none;
+    font-weight: bold;
+    font-family: inter, sans-serif;
+    transition: color 0.2s ease;
+}
+
+.contact-container1 .chat-link:hover {
+    color: #90caf9;
+}
+
+.contact-bttn {
+    background-color: #0154da;
+    width: 200px;
+    border: none;
+    color: #f5f5dc;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.contact-container2 {
+    min-width: 150px;
+    margin-right: 0; 
+    text-align: center;
+}
+
+.contact-container2 h3 {
+    font-size: 17px;
+    color: #f5f5dc;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.info-vetor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.info-vetor img {
+    filter: brightness(0) invert(1);
+    width: 30px;
+    height: 30px;
+    transition: filter 0.2s ease;
+}
+
+.info-vetor img:hover {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(13%) saturate(464%) hue-rotate(42deg) brightness(94%) contrast(85%);
+}

@@ -1,0 +1,181 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+header {
+  background: rgba(0, 5, 53, 0.2);
+  backdrop-filter: blur(30px) brightness(0.7);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 70px;
+}
+
+body {
+    background-image: url('/Site/imagens/fundo.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: inter, sans-serif;
+    
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 80px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: calc(100vh - 150px); /* Ocupa a tela inteira descontando o header */
+}
+
+header ul {
+  list-style-type: none;
+  display: flex;
+  gap: 50px;
+  padding: 50px;
+  margin: 0;
+}
+
+header a {
+  text-decoration: none;
+  color: #f5f5dc;
+}
+
+
+/* ==========================================================================
+   PÁGINA INFORMACIONAL (ABOUT)
+   ========================================================================== */
+
+.conteudo {
+  margin-top: 40px; 
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Container Principal da Seção */
+.about-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 60px 0;
+  color: #ffffff;
+}
+
+/* --- COLUNA DA ESQUERDA (Grid de Fotos e Cards) --- */
+.about-media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 220px);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+}
+
+/* Estilo padrão para os cards de foto e métricas */
+.photo-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 16px; /* Bordas arredondadas do layout */
+}
+
+#phc1 {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 16px;
+  background-position: center;
+}
+
+.metric-card {
+  background-color: #05224e; /* Azul um pouco mais claro para os cards */
+  padding: 20px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.metric-card h3 {
+  font-size: 28px;
+  margin: 0 0 5px 0;
+  font-weight: bold;
+}
+
+.metric-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #a0aec0;
+}
+
+/* Card específico de estrelas */
+.rating-card {
+  background-color: #031530; /* Fundo sutilmente diferente ou com borda opcional */
+  border: 1px solid #0d2a54; 
+}
+
+.rating-card h3 {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.stars {
+  color: #ffb800; /* Cor amarela das estrelas */
+  font-size: 18px;
+}
+
+/* --- COLUNA DA DIREITA (Textos) --- */
+.about-content {
+  flex: 1;
+  max-width: 500px;
+}
+
+.about-title {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  line-height: 1.2;
+  font-family: "Chonburi", serif;
+  color: #f5f5dc;
+}
+
+.about-title .highlight {
+  color: #0056cc; /* Azul destacado na palavra BookWay */
+  display: block; /* Força quebrar a linha como no modelo */
+}
+
+.about-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #f5f5dc;
+  margin-bottom: 30px;
+}
+
+/* Botão Saiba Mais */
+.btn-more {
+  display: inline-block;
+  background-color: #0056cc;
+  color: white;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.btn-more:hover {
+  background-color: #0041a3;
+}

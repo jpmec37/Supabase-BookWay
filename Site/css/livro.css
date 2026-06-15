@@ -1,0 +1,240 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E BODY (Estética Bookway)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #000716;
+    color: #e2e8f0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Fundo desfocado original do seu site para dar profundidade */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../imagens/fundodesfocado.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -100;
+}
+
+/* Barra de rolagem personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #011733;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.4);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #3b82f6;
+}
+
+/* ==========================================================================
+   CABEÇALHO DE LEITURA
+   ========================================================================== */
+.leitura-header {
+    background-color: rgba(1, 23, 51, 0.85);
+    backdrop-filter: blur(12px);
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.btn-voltar {
+    color: #9f9f9f;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn-voltar:hover {
+    color: #3b82f6;
+    transform: translateX(-3px);
+}
+
+.livro-titulo-topo {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 20px;
+    color: #f5f5dc;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.info-leitura {
+    font-size: 14px;
+    color: #9f9f9f;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ==========================================================================
+   CONTENTOR PRINCIPAL DO LIVRO (Desktop First)
+   ========================================================================== */
+.leitura-container {
+    max-width: 900px;
+    margin: 110px auto 60px auto;
+    background-color: #021123;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 60px 80px;
+    box-shadow: 0 15px 40px rgba(0, 5, 53, 0.8);
+    position: relative;
+}
+
+.leitura-conteudo h2 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 36px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.leitura-conteudo p {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #cbd5e1;
+    margin-bottom: 25px;
+    text-indent: 2.5em;
+    text-align: justify;
+}
+
+/* ==========================================================================
+   PAINEL DE FERRAMENTAS FLUTUANTE (DOCK INFERIOR)
+   ========================================================================== */
+.painel-ferramentas {
+    position: fixed;         /* Fixa o elemento na tela, ignorando o scroll */
+    bottom: 25px;            /* Distância do fundo da página */
+    left: 50%;               /* Move o painel para o meio horizontal */
+    transform: translateX(-50%); /* Ajuste perfeito para centralizar o elemento */
+    
+    width: 90%;
+    max-width: 550px;        /* Largura elegante para não ocupar a tela toda */
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* Efeito de Vidro Fosco (Glassmorphism) */
+    background-color: rgba(2, 17, 35, 0.85); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    
+    padding: 12px 25px;
+    border-radius: 50px;     /* Formato de pílula flutuante */
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    
+    /* Sombra pesada para dar efeito de profundidade/flutuação */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 
+                0 0 20px rgba(59, 130, 246, 0.15);
+    
+    z-index: 1000;           /* Garante que o painel fica SEMPRE por cima do texto */
+    transition: all 0.3s ease;
+}
+
+.controles-fonte, .controles-paginacao {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-ferramenta {
+    background-color: #0052cc;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;     /* Botões arredondados para combinar com o painel */
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-ferramenta:hover {
+    background-color: #0041a3;
+    transform: translateY(-1px);
+}
+
+.btn-ferramenta:active {
+    transform: scale(0.95);
+}
+
+.btn-ferramenta:disabled {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.2);
+    cursor: not-allowed;
+    transform: none;
+}
+
+#indicador-pagina {
+    color: #e2e8f0;
+    font-weight: bold;
+    font-size: 15px;
+    user-select: none;       /* Impede o usuário de selecionar o texto sem querer */
+}
+/* ==========================================================================
+   RESPONSIVIDADE (Telemóvel)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .leitura-header {
+        padding: 0 15px;
+    }
+    .livro-titulo-topo {
+        font-size: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 140px;
+    }
+    .info-leitura {
+        display: none;
+    }
+    .leitura-container {
+        margin: 85px 15px 30px 15px;
+        padding: 30px 25px;
+    }
+    .leitura-conteudo h2 {
+        font-size: 26px;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+    }
+    .leitura-conteudo p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+}

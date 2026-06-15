@@ -1,0 +1,475 @@
+/* ==========================================================================
+   ESCOPO BLINDADO - CHALLENGE DASHBOARD (BOOKWAY THEME)
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap");
+
+.cd-wrapper {
+  --cd-primary: #3b82f6;
+  --cd-primary-hover: #1e40af;
+  --cd-bg-card: rgba(1, 23, 51, 0.65); /* Azul escuro translúcido */
+  --cd-border: rgba(255, 255, 255, 0.08);
+  --cd-text-light: #f5f5dc;
+  --cd-text-muted: #8a99ad;
+  --cd-danger: #ef4444;
+  --cd-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --cd-radius: 16px;
+  --cd-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  font-family: "Inter", sans-serif;
+  color: var(--cd-text-light);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+.cd-wrapper *,
+.cd-wrapper *::before,
+.cd-wrapper *::after {
+  box-sizing: border-box;
+}
+
+/* O SEGREDO PARA NÃO QUEBRAR O LAYOUT ESTÁ AQUI:
+  Uso de CSS Grid forçando a coluna da esquerda ter 320px e a da direita pegar o resto 
+*/
+.cd-app-container {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+  align-items: start;
+}
+
+/* ==========================================================================
+   CARDS & EFEITO GLASSMORPHISM
+   ========================================================================== */
+.cd-glass {
+  background: var(--cd-bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--cd-border);
+  border-radius: var(--cd-radius);
+  box-shadow: var(--cd-shadow);
+}
+
+.cd-card {
+  padding: 1.5rem;
+}
+
+.cd-card-title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  margin-top: 0;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.cd-sidebar,
+.cd-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ==========================================================================
+   FORMULÁRIOS
+   ========================================================================== */
+.cd-form-group {
+  margin-bottom: 1rem;
+}
+.cd-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--cd-text-muted);
+}
+.cd-form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--cd-text-light);
+  border: 1px solid var(--cd-border);
+  border-radius: 8px;
+  outline: none;
+  transition: var(--cd-transition);
+  font-family: inherit;
+}
+.cd-form-control:focus {
+  border-color: var(--cd-primary);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Botão Estilizado */
+.cd-btn {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--cd-transition);
+  color: white;
+  margin-top: 0.5rem;
+}
+.cd-btn-glow {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+.cd-btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
+}
+
+/* ==========================================================================
+   SELETOR DE CORES
+   ========================================================================== */
+.cd-color-picker {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.cd-color-option {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 2px solid transparent;
+}
+.cd-color-option:hover {
+  transform: scale(1.1);
+}
+.cd-color-option.selected {
+  transform: scale(1.25);
+  border-color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* ==========================================================================
+   LISTA DE DESAFIOS INTERATIVA
+   ========================================================================== */
+.cd-challenges-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  overflow-y: auto;
+  max-height: 480px;
+  padding-right: 0.5rem;
+}
+.cd-challenges-list::-webkit-scrollbar {
+  width: 6px;
+}
+.cd-challenges-list::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+.cd-challenge-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: var(--cd-transition);
+  background-color: rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+.cd-challenge-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateX(4px);
+}
+.cd-challenge-item.active {
+  border-color: var(--cd-primary);
+  background: linear-gradient(
+    90deg,
+    rgba(59, 130, 246, 0.15) 0%,
+    transparent 100%
+  );
+  border-left: 4px solid var(--cd-primary);
+}
+
+.cd-challenge-color-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px currentColor;
+}
+.cd-challenge-info {
+  flex-grow: 1;
+  min-width: 0;
+}
+.cd-challenge-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #fff;
+}
+.cd-challenge-meta {
+  font-size: 0.8rem;
+  color: var(--cd-text-muted);
+  margin-top: 2px;
+}
+
+/* Botão Lixeira Animado */
+.cd-delete-btn {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: var(--cd-danger);
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  position: absolute;
+  right: 0.75rem;
+  display: flex;
+}
+.cd-challenge-item:hover .cd-delete-btn {
+  opacity: 1;
+  transform: translateX(0);
+}
+.cd-delete-btn:hover {
+  background-color: var(--cd-danger);
+  color: white;
+}
+
+/* ==========================================================================
+   ESTATÍSTICAS
+   ========================================================================== */
+.cd-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.cd-stat-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cd-stat-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+.cd-stat-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: "Bricolage Grotesque", sans-serif;
+  line-height: 1;
+}
+.cd-stat-label {
+  font-size: 0.75rem;
+  color: var(--cd-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   CALENDÁRIO PREMIUM
+   ========================================================================== */
+.cd-calendar-card {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cd-calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.cd-month-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-family: "Bricolage Grotesque", sans-serif;
+  color: #ffffff;
+}
+.cd-calendar-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+.cd-nav-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: #fff;
+  transition: var(--cd-transition);
+  font-weight: 600;
+}
+.cd-nav-btn:hover {
+  background: var(--cd-primary);
+  border-color: var(--cd-primary);
+}
+
+.cd-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  flex-grow: 1;
+}
+.cd-weekday {
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  padding-bottom: 0.5rem;
+}
+
+.cd-day-cell {
+  border: 1px solid #f5f5dc;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 0.5rem;
+  min-height: 85px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--cd-transition);
+  position: relative;
+  overflow: hidden;
+}
+.cd-day-number {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 0.25rem;
+}
+
+.cd-day-cell.cd-current-month.cd-past-or-today {
+  cursor: pointer;
+}
+.cd-day-cell.cd-current-month.cd-past-or-today:hover {
+  border-color: var(--cd-primary);
+  background-color: rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+}
+.cd-day-cell.cd-other-month {
+  opacity: 0.2;
+  pointer-events: none;
+}
+.cd-day-cell.cd-future {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Dia Atual Destaque */
+.cd-day-cell.cd-today {
+  background: linear-gradient(
+    180deg,
+    rgba(59, 130, 246, 0.2) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  border-color: rgba(59, 130, 246, 0.6);
+}
+.cd-day-cell.cd-today .cd-day-number {
+  color: #60a5fa;
+  font-weight: 800;
+}
+
+.cd-dots-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: auto;
+  padding-top: 5px;
+}
+.cd-completion-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px currentColor;
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Toast */
+.cd-toast-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 9999;
+}
+.cd-toast {
+  background: #011733;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  font-weight: 500;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cd-toast.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.cd-empty-state {
+  text-align: center;
+  color: var(--cd-text-muted);
+  padding: 2rem 0;
+  font-size: 0.9rem;
+}
+
+/* Mobile Adaptations */
+@media (max-width: 968px) {
+  .cd-app-container {
+    grid-template-columns: 1fr;
+  }
+  .cd-sidebar {
+    width: 100%;
+  }
+}
+@media (max-width: 560px) {
+  .cd-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .cd-day-cell {
+    min-height: 65px;
+  }
+  .cd-month-title {
+    font-size: 1.2rem;
+  }
+}

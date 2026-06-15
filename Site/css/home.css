@@ -1,0 +1,919 @@
+
+
+
+/* ==========================================================================
+   CARDS DE LIVROS / SEÇÃO HORIZONTAL
+   ========================================================================== */
+.book {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+  flex: 0 0 200px;
+  height: 260px;
+  transition: all 0.2s ease;
+}
+
+.book:hover {
+  box-shadow: 0 1px 10px rgba(59, 130, 246, 0.5);
+  transform: scale(1.03);
+}
+
+.book img {
+  width: 200px;
+  height: 260px;
+  display: block;
+  object-fit: cover;
+}
+
+.card-overlay {
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  padding: 8px;
+  color: #f5f5dc;
+  background: rgba(0, 5, 53, 0.2);
+  backdrop-filter: blur(30px) brightness(0.7);
+}
+
+.row {
+  margin-bottom: 40px;
+}
+
+.row h1 {
+  font-size: 25px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  margin-bottom: 10px;
+}
+
+.book-progress {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  height: 4px;
+  margin-top: 4px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.progress-bar {
+  width: 70%;
+  height: 5px;
+  background: linear-gradient(90deg, #3b82f6, #1e40af);
+  border-radius: 10px;
+}
+
+.book-row {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth; 
+  gap: 26px;
+  padding: 10px;
+}
+
+.secao-horizontal{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.btn-scroll-left,
+.btn-scroll-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  
+  background-color: rgba(7, 25, 47, 0.85); /* Tom azul-escuro do seu header com transparência */
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.2s ease;
+}
+
+.btn-scroll-left {
+  left: 5px;
+}
+.btn-scroll-right {
+  right: 5px;
+}
+
+.btn-scroll-left:hover,
+.btn-scroll-right:hover {
+  background-color: rgb(39, 97, 255); /* Acende com o azul do seu tema */
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* ==========================================================================
+   SEÇÃO DE COMUNIDADES
+   ========================================================================== */
+.comunidade {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+  width: 98%;
+  height: 230px;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  transition: all 0.2s ease;
+}
+
+.comunidade:hover {
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.5);
+  transform: scale(1.03);
+}
+
+.comunidade-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+  width: 100%;
+  max-width: 1920px;
+}
+
+.comunidade::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.comunidade-overlay {
+  font-size: 18px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  min-width: 40%;
+  height: 50px;
+  padding: 8px;
+  color: #f5f5dc;
+  background-color: rgb(255, 123, 0);
+  border-radius: 0 10px 0 0;
+}
+
+.comunidade img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+}
+
+.titulocomunidade {
+  margin-bottom: 13px;
+  justify-content: space-between;
+  display: flex;
+  color: white;
+}
+
+.titulocomunidade a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  height: 20px;
+  margin-top: 10px;
+}
+
+.comunidade-overlay h2 {
+  font-size: 17px;
+}
+.comunidade-overlay p {
+  font-size: 13px;
+}
+/* ==========================================================================
+   NOVO CARROSSEL HERO (ESTILO GALERIA 3D)
+   ========================================================================== */
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  height: 550px; /* Mais alto e imponente */
+  margin: 0 auto 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-carousel-track {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-slide {
+  position: absolute;
+  width: 65%; /* O slide principal ocupa 65% do centro da tela */
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Animação super suave */
+  opacity: 0;
+  z-index: 1;
+  transform: scale(0.8) translateX(0);
+  box-shadow: 0 10px 30px rgba(0, 5, 53, 0.8);
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.5); /* Escurece a base para dar contraste ao texto */
+  transition: filter 0.5s ease;
+}
+
+/* O slide central (Ativo) */
+.hero-slide.active {
+  opacity: 1;
+  z-index: 3;
+  transform: scale(1) translateX(0);
+}
+
+.hero-slide.active img {
+  filter: brightness(0.8);
+}
+
+/* O slide da Esquerda (Prev) */
+.hero-slide.prev {
+  opacity: 0.5;
+  z-index: 2;
+  transform: scale(0.85) translateX(-60%);
+  cursor: pointer;
+}
+
+/* O slide da Direita (Next) */
+.hero-slide.next {
+  opacity: 0.5;
+  z-index: 2;
+  transform: scale(0.85) translateX(60%);
+  cursor: pointer;
+}
+
+.hero-slide.prev:hover, 
+.hero-slide.next:hover {
+  opacity: 0.8;
+}
+
+/* Estilização do Conteúdo Interno do Slide */
+.hero-content {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  right: 40px;
+  color: white;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease 0.3s; /* Entra suavemente um pouco depois do slide */
+  pointer-events: none;
+}
+
+.hero-slide.active .hero-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: #3b82f6;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-content h2 {
+  font-size: 42px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+}
+
+.hero-content p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  max-width: 60%;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+  font-family: inter, sans-serif;
+  color: #e2e8f0;
+}
+
+.hero-btn {
+  background: linear-gradient(90deg, #1e40af, #3b82f6);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.5);
+}
+
+/* Controles de Navegação Fixos Abaixo */
+.hero-controls {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  z-index: 10;
+}
+
+.hero-arrow {
+  background-color: rgba(7, 25, 47, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.hero-arrow:hover {
+  background-color: #3b82f6;
+  transform: scale(1.1);
+}
+
+.hero-indicators {
+  display: flex;
+  gap: 10px;
+}
+
+/* Indicadores tipo "Barra" em vez de bolinhas */
+.hero-dot {
+  width: 25px;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.hero-dot.active {
+  background-color: #3b82f6;
+  width: 50px; /* Estica a barra ativa */
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+}
+
+/* ==========================================================================
+   ESTRUTURA BASE DO MODAL (OVERLAY)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75); /* Escurece o fundo do site */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Garante que fica por cima de todo o header/aside */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+/* Classe ativa disparada pelo JavaScript */
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-container {
+  background-color: #021123; /* Tom azul bem escuro idêntico ao print */
+  width: 90%;
+  max-width: 950px;
+  height: 85vh;
+  max-height: 700px;
+  border-radius: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: modalScaleUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes modalScaleUp {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Botão Fechar (X) */
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.2s;
+}
+
+.modal-close-btn:hover {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   COLUNA ESQUERDA - CAPA E SELOS
+   ========================================================================== */
+.modal-left-col {
+  width: 42%;
+  background-color: #011833; /* Leve variação para destacar a área da capa */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  position: relative;
+}
+
+.book-cover-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  border-radius: 8px;
+}
+
+.modal-book-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+
+/* ==========================================================================
+   COLUNA DIREITA - CONTEÚDO (SCROLLÁVEL)
+   ========================================================================== */
+.modal-right-col {
+  width: 58%;
+  padding: 40px 45px 40px 35px;
+  overflow-y: auto; /* Caso o texto ou comentários sejam grandes, a rolagem fica interna */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Customização da barra de rolagem interna do modal */
+.modal-right-col::-webkit-scrollbar { width: 6px; }
+.modal-right-col::-webkit-scrollbar-track { background: transparent; }
+.modal-right-col::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 10px; }
+
+.modal-book-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.modal-book-author {
+  font-size: 16px;
+  color: #8a99ad;
+  margin-bottom: 15px;
+}
+
+/* Estrelas e Nota */
+.modal-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.rating-number {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.stars {
+  color: #eab308;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.modal-synopsis {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 25px;
+}
+
+.div-bttns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Botão LER */
+.modal-btn-read {
+  background-color: #0052cc;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 0;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  width: 84%;
+  text-align: center;
+}
+
+.modal-btn-read:hover {
+  background-color: #0066ff;
+}
+
+.modal-btn-bs {
+  background-color: #cc8100;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 0;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  width: 15%;
+  text-align: center;
+}
+
+.modal-btn-bs:hover {
+  background-color: #ff7b00;
+}
+
+.modal-btn-read:active {
+  transform: scale(0.99);
+}
+
+.modal-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 25px 0;
+}
+
+/* ==========================================================================
+   SEÇÃO DE COMENTÁRIOS E PROGRESSO
+   ========================================================================== */
+.modal-comments-section h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.comment-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 15px;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.comment-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.user-stats {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* Bloco do progresso de leitura */
+.comment-progress-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.progress-text {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.progress-bar {
+  width: 100px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #0052cc;
+}
+
+.comment-text {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #94a3b8;
+}
+
+.read-more {
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+/* ==========================================================================
+   MODAL DE COMUNIDADES (ORGANIZADO E SEM REDUNDÂNCIAS)
+   ========================================================================== */
+.comm-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Ativa o Modal via JavaScript */
+.comm-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* CONTAINER UNIFICADO: Moldura estática que segura o formato do modal */
+.comm-modal-container {
+  background-color: #011733; /* Cor azul escura padrão do Bookway */
+  width: 650px;
+  max-width: 90%;
+  height: 90%;
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(245, 245, 220, 0.1);
+  
+  /* Mantém as rolagens e conteúdos estritamente presos nas curvas */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; 
+  animation: modalScaleUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* O Conteúdo Rolável (Foto + Textos rolam juntos aqui dentro) */
+.comm-modal-scrollable-content {
+  flex: 1;
+  overflow-y: auto;    /* Ativa a rolagem vertical estrita */
+  overflow-x: hidden;  /* Trava qualquer quebra lateral */
+  padding-right: 4px;  /* Pequeno respiro para a barra não cobrir os textos */
+}
+
+/* Customização da Barra de Rolagem Flutuante (Presa nas Curvas) */
+.comm-modal-scrollable-content::-webkit-scrollbar {
+  width: 6px; 
+}
+
+.comm-modal-scrollable-content::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+.comm-modal-scrollable-content::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15); 
+  border-radius: 10px; 
+}
+
+.comm-modal-scrollable-content::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3); 
+}
+
+/* Botão de Fechar */
+.comm-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  transition: background 0.2s;
+}
+
+.comm-close-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* BANNER HORIZONTAL */
+.comm-modal-banner {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.comm-modal-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Selo da Categoria (Ex: Poesia) */
+.comm-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* CORPO DO CONTEÚDO */
+.comm-modal-body {
+  padding: 24px;
+}
+
+.comm-title {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.comm-members-count {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.comm-description {
+  color: #b9c7d9;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+/* BOTÕES DE AÇÃO */
+.comm-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.comm-actions button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-visit {
+  background-color: #0052cc;
+  color: #ffffff;
+  border: none;
+}
+.btn-visit:hover { background-color: #0041a3; }
+
+.btn-subscribe {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.btn-subscribe:hover { background-color: rgba(255, 255, 255, 0.05); }
+
+.comm-actions button:active { transform: scale(0.98); }
+
+/* SEÇÃO DE COMENTÁRIOS */
+.comm-comments-section h3 {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.comm-comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.comm-comment-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.comm-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.comm-comment-content h4 {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.comm-comment-content p {
+  color: #b9c7d9;
+  font-size: 14px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.comm-likes {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  cursor: pointer;
+}
+.hero-slide:hover{
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+}

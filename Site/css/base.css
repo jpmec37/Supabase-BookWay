@@ -1,0 +1,629 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E BODY
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: inter, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000716;
+  color: white;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../imagens/fundodesfocado2.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  z-index: -100;
+}
+
+
+
+body::-webkit-scrollbar {
+  width: 8px; /* Deixa ela bem fininha e discreta */
+}
+
+body::-webkit-scrollbar-track {
+  background: #011733; /* Mesma cor de fundo da sua sidebar para camuflar */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15); /* Um branco bem transparente */
+  border-radius: 10px; /* Deixa as pontas do pino arredondadas */
+  border: 1px solid #07192f; /* Cria um espaçamento sutil usando a cor de fundo */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Dá um destaque elegante */
+}
+
+
+/* ==========================================================================
+   CABEÇALHO (HEADER)
+   ========================================================================== */
+header {
+  height: 60px;
+  background-color: #011733;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100% - 240px);
+  z-index: 1000;
+  justify-content: space-between;
+  transition: width 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#imgtexto {
+  margin-top: 5px;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#g-icon-user {
+  align-items: center;
+}
+
+#sec-user {
+  display: flex;
+  align-items: center;
+}
+
+#pic-user {
+  border-radius: 50px;
+}
+
+#seq {
+  margin-right: 15px;
+}
+
+#txt-user {
+  font-weight: bold;
+  font-size: 15px;
+  margin-right: 0;
+  display: flex;
+  text-decoration: none;
+  color: #f5f5dc;
+}
+#barrapesquisa {
+  display: flex;
+  align-items: center;
+  border: none;
+  border: 5px solid #f5f5dc;
+  border-radius: 12px;
+  background-color:#f5f5dc;
+}
+#s-header {
+  background: #f5f5dc;
+  padding: 5px;
+  width: 500px;
+  border:none;
+   font-family: inter, sans-serif;
+   margin-left: 5px;
+}
+#b-header {
+  background-image: url("../imagens/Vetores/PesquisaVetor.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 20px;  
+  height: 20px; 
+  background-color: #f5f5dc;
+  padding: 5px;
+  border: none;
+  transform: rotate(90deg);
+  margin-right: 10px;
+   font-family: inter, sans-serif;
+   cursor: pointer;
+}
+#f-header {
+  background: #f5f5dc;
+  padding: 5px;
+  border:none;
+  font-family: inter, sans-serif;
+  margin-right: 5px;
+}
+#filtro{
+  border-right: 1px solid #011733;
+}
+#f-header input:focus {
+  outline: none;
+}
+header #s-header:focus {
+  outline: none;
+}
+
+.fire-icon{
+filter: invert(58%) sepia(98%) saturate(2560%) hue-rotate(1deg) brightness(106%) contrast(105%);
+}
+
+/* ==========================================================================
+   MENU DE NAVEGAÇÃO SUPERIOR
+   ========================================================================== */
+.navegacao {
+  background-color: #011733;
+  top: 60px;
+  right: 0;
+  width: calc(100% - 240px);
+  padding: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 1000;
+  transition: width 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navegacao .ul-nav ul{
+  display: flex;
+  list-style: none;
+  gap: 170px;
+}
+
+.navegacao a {
+  display: inline-block;
+  text-decoration: none;
+  color: #9f9f9f;
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.navegacao li {
+  display: block;
+  background: none;
+}
+
+.navegacao a:hover {
+  color: #f5f5dc;
+  transform: scale(1.09);
+}
+
+.navegacao li.active a {
+  color: #f5f5dc;
+}
+
+/* ==========================================================================
+   BARRA LATERAL PRINCIPAL (SIDEBAR)
+   ========================================================================== */
+
+.blateral {
+  width: 240px;
+  height: 100vh;
+  background-color: #011733;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  top: 0;
+  /* IMPORTANTE: Removemos paddings laterais genéricos para os eixos não recalcularem */
+  padding: 15px 0; 
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: width 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.blateral::-webkit-scrollbar {
+  width: 6px; /* Deixa ela bem fininha e discreta */
+}
+
+.blateral::-webkit-scrollbar-track {
+  background: #07192f; /* Mesma cor de fundo da sua sidebar para camuflar */
+}
+
+.blateral::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15); /* Um branco bem transparente */
+  border-radius: 10px; /* Deixa as pontas do pino arredondadas */
+  border: 1px solid #07192f; /* Cria um espaçamento sutil usando a cor de fundo */
+}
+
+.blateral::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Dá um destaque elegante */
+}
+
+.blateral ul {
+  list-style: none;
+}
+
+.blateral li {
+  list-style: none;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.blateral li a {
+  display: flex;
+  flex-direction: row;       
+  align-items: center;
+  justify-content: flex-start;
+  padding: 17px 20px; /* 30px fixa o ícone no exato mesmo lugar sempre */
+  gap: 15px;                 /* Espaço controlado entre o ícone e o texto */
+  color: #f5f5dc;
+  text-decoration: none;
+  border-radius: 12px;
+  width: 90%;
+  margin-left: 10px;
+  transition: all 0.2s ease;
+}
+
+/* O efeito active agora volta para o link inteiro, igual ao YouTube */
+.blateral li.active a {
+  background: linear-gradient(455deg, #000f42, #0047b8);
+  border: 1px solid #0047b8;
+}
+
+.sidebar-icon {
+  object-fit: cover;
+  width: 23px;
+  height: 23px;
+  filter: brightness(0) saturate(100%) invert(98%) sepia(8%) saturate(614%) hue-rotate(323deg) brightness(103%) contrast(93%);
+}
+
+.sidebar-icon1 {
+  object-fit: cover;
+  width: 15px;
+  height: 15px;
+  filter: brightness(0) saturate(100%) invert(98%) sepia(8%) saturate(614%)
+    hue-rotate(323deg) brightness(103%) contrast(93%);
+}
+
+.fire-icon1 {
+  filter: invert(58%) sepia(98%) saturate(2560%) hue-rotate(1deg)
+    brightness(106%) contrast(105%);
+    width:25px;
+    height:25px;
+}
+.sidebar-icon2{
+  filter: invert(52%) sepia(85%) saturate(546%) hue-rotate(84deg) brightness(95%) contrast(95%);
+}
+.sidebar-icon3{
+filter: invert(61%) sepia(82%) saturate(451%) hue-rotate(81deg) brightness(92%) contrast(90%);
+}
+.verde1{
+  filter: invert(58%) sepia(92%) saturate(650%) hue-rotate(85deg)
+brightness(95%) contrast(95%);
+}
+.verde2{
+  filter: invert(32%) sepia(85%) saturate(1200%) hue-rotate(90deg)
+brightness(85%) contrast(100%);
+}
+.blateral li.item-usuario a {
+  margin-left: 10px; 
+  width: 90%;
+  padding-left: 10px; 
+}
+
+.user-avatar {
+  filter: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #f5f5dc;
+}
+
+.blateral a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transform: scale(1.03);
+}
+
+.open-close {
+  background-color: transparent;
+}
+
+.bttn-oc {
+  font-size: 30px;
+  background: transparent;
+  border: none;
+  color: #f5f5dc;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  align-items: flex-start;
+  margin-left: 15px;
+}
+
+.create-comunity a {
+  text-decoration: none;
+  margin-left: 10px;
+  width: 91%;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  
+  border: 1px solid #00358a;
+  background: linear-gradient(45deg, #14004d, #b66d00);
+  border-radius: 12px; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+  /* Espaçamento interno controlado para o texto não colar nas bordas */
+  padding: 20px; 
+  gap: 12px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.create-comunity a:hover {
+  border: 1px solid #0062ff;
+  box-shadow: 0 0 15px rgba(0, 68, 204, 0.6);
+  transform: scale(1.01);
+}
+
+.comunity-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.comunity-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #f5f5dc;
+  font-family: inter, sans-serif;
+}
+
+.comunity-subtitle {
+  font-size: 13px;
+  color: #8a99ad; /* Tom de cinza mais fosco para dar o contraste do print */
+}
+
+.bttn-logout {
+  background: linear-gradient(90deg, #1e40af, #3b82f6);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.2s ease;
+
+  /* Centraliza a seta (>) dentro do próprio botão quadrado */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Mantém o botão quadrado igual aos itens da lista colapsados */
+  width: 48px !important;  
+  height: 48px !important;
+  border-radius: 12px;
+  border: 1px solid #005dd6;
+  padding: 10px 20px;
+}
+
+.blateral .logout {
+  position: relative;
+  margin-top: auto;
+  width: calc(100% - 20px); /* Ocupa a largura interna correta da sidebar */
+  display: flex;
+  justify-content: flex-end;
+  transition: all 0.2s ease;
+}
+
+.logout a:hover {
+  box-shadow: 0 0 15px rgba(0, 68, 204, 0.6);
+  transform: scale(1.03);
+}
+
+.blateral .logout a {
+  text-decoration: none !important;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+  position: relative;
+  background-color:#011733;
+  display: flex;
+  gap: 100px;
+  margin: 0;
+  width: calc(100% - 240px);
+  left: 240px;
+  padding: 30px;
+  justify-content: center;
+  border-top: 1px solid #f5f5dc;
+  transition: 0.17s ease;
+}
+
+.footerbusca {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerbusca .footer-links {
+  margin-bottom: 13px;
+}
+
+/* --- ALTERAÇÃO AQUI: Aplicando o estilo para links E para o nosso botão --- */
+.footerbusca a, 
+.footerbusca button {
+  text-decoration: none;
+  color: #f5f5dc;
+  margin-bottom: 10px;
+  
+  /* Reset específico para o botão sumir com as bordas e fundos nativos do navegador */
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  text-align: left; /* Garante que o texto fique alinhado igual ao link */
+}
+
+.footerbusca button {
+  margin-bottom: 0;
+}
+
+.negrito {
+  font-weight: 700;
+}
+
+.trocarcor {
+  filter: brightness(0) saturate(100%) invert(98%) sepia(8%) saturate(614%) hue-rotate(323deg) brightness(103%) contrast(93%);
+}
+
+footer p {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.redes-sociais, .imagem {
+  justify-content: center;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+/* --- ALTERAÇÃO AQUI: Efeito de Hover igual para ambos --- */
+.footerbusca a:hover, 
+.footerbusca button:hover {
+  color: #afaf8e;
+}
+
+.redes-sociais img:hover {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(13%) saturate(464%) hue-rotate(42deg) brightness(94%) contrast(85%);
+}
+
+
+
+/* ==========================================================================
+   ESTADOS DE TRANSIÇÃO (SIDEBAR RECOLHIDA)
+   ========================================================================== */
+
+/* Quando o body tiver a classe recolhida (Mantendo seus 100px) */
+body.sidebar-collapsed .blateral {
+  width: 100px;
+  padding: 10px 5px; 
+  transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1), padding 0.2s ease;
+  justify-content: center;
+  align-items: center;
+}
+
+body.sidebar-collapsed .container {
+  margin-left: 100px;
+  width: calc(100% - 100px);
+  max-width: calc(100% - 100px);
+  transition: all 0.2s ease;
+}
+
+body.sidebar-collapsed footer {
+  width: calc(100% - 100px);
+  transition: all 0.2s ease;
+  left: 100px;
+}
+
+body.sidebar-collapsed .header,
+body.sidebar-collapsed .navegacao {
+  width: calc(100% - 100px);
+  transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1), padding 0.2s ease;
+}
+
+body.sidebar-collapsed .blateral .bttn-oc{
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 15px 15px;
+}
+
+/* Modificações de recolhimento dos itens da lista */
+body.sidebar-collapsed .blateral ul {
+  padding: 0;
+  align-items: center;
+}
+
+body.sidebar-collapsed .blateral li a {
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 17px 20px !important;  /* Mantém exatamente o mesmo recuo de quando estava aberta */
+  width: 100%;
+  margin-left: 0;
+}
+
+body.sidebar-collapsed .blateral li.active a {
+  background: linear-gradient(455deg, #000f42, #0047b8);
+  border: 1px solid #0047b8;
+}
+
+body.sidebar-collapsed .blateral li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 0;
+}
+
+body.sidebar-collapsed .blateral li a {
+  flex-direction: column;   
+  justify-content: left;   /* Centraliza tudo verticalmente */
+  align-items: center;       /* Centraliza tudo horizontalmente */
+  text-align: left;
+  gap: 5px;                  /* Espaço curtinho entre o ícone e o texto de baixo */
+  padding: 10px 0;           /* Padding interno para dar altura ao botão */
+  width: 100%;
+}
+
+/* O SEGREDO: Esconde o texto da tag span perfeitamente */
+body.sidebar-collapsed .blateral li a span {
+  display: none;
+}
+
+
+body.sidebar-collapsed .blateral .logout {
+  justify-content: center;
+  width: 100%;
+  bottom: 20px;
+}
+body.sidebar-collapsed .expand-only {
+  display: none;
+}
+
+/* ==========================================================================
+   CONTAINER PRINCIPAL E ESTRUTURA DE CONTEÚDO
+   ========================================================================== */
+.container {
+  margin-top: 105px; 
+  margin-left: 240px;
+  /* Garante que o container NUNCA passe do limite da tela menos a sidebar */
+  width: calc(100% - 240px);
+  max-width: calc(100% - 240px);
+  min-height: 100%; 
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+
+.btn-oculto {
+  display: none !important;
+}
+
+.book-row::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}

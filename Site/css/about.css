@@ -1,0 +1,257 @@
+
+/* ==========================================================================
+   PÁGINA INFORMACIONAL (ABOUT)
+   ========================================================================== */
+
+.conteudo {
+  margin-top: 105px; 
+  margin-left: 240px;
+  /* Garante que o container NUNCA passe do limite da tela menos a sidebar */
+  width: calc(100% - 240px);
+  max-width: calc(100% - 240px); 
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  align-items: center;
+}
+
+body.sidebar-collapsed .conteudo {
+  margin-left: 100px;
+  width: calc(100% - 100px);
+  max-width: calc(100% - 100px);
+  transition: all 0.2s ease;
+}
+
+/* Container Principal da Seção */
+.about-section {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 40px;
+  color: #ffffff;
+}
+
+/* --- COLUNA DA ESQUERDA (Grid de Fotos e Cards) --- */
+.about-media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 220px);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+}
+
+/* Estilo padrão para os cards de foto e métricas */
+.photo-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 16px; /* Bordas arredondadas do layout */
+}
+
+#phc1 {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 16px;
+  background-position: center;
+}
+
+.metric-card {
+  background-color: #05224e; /* Azul um pouco mais claro para os cards */
+  padding: 20px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.metric-card h3 {
+  font-size: 28px;
+  margin: 0 0 5px 0;
+  font-weight: bold;
+}
+
+.metric-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #a0aec0;
+}
+
+/* Card específico de estrelas */
+.rating-card {
+  background-color: #031530; /* Fundo sutilmente diferente ou com borda opcional */
+  border: 1px solid #0d2a54; 
+}
+
+.rating-card h3 {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.stars {
+  color: #ffb800; /* Cor amarela das estrelas */
+  font-size: 18px;
+}
+
+/* --- COLUNA DA DIREITA (Textos) --- */
+.about-content {
+  flex: 1;
+  max-width: 500px;
+}
+
+.about-title {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  line-height: 1.2;
+  font-family: "Chonburi", serif;
+  color: #f5f5dc;
+}
+
+.about-title .highlight {
+  color: #0056cc; /* Azul destacado na palavra BookWay */
+  display: block; /* Força quebrar a linha como no modelo */
+}
+
+.about-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #f5f5dc;
+  margin-bottom: 30px;
+}
+
+/* Botão Saiba Mais */
+.btn-more {
+  display: inline-block;
+  background-color: #0056cc;
+  color: white;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.btn-more:hover {
+  background-color: #0041a3;
+}
+
+.modal {
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 3, 20, 0.6); 
+  backdrop-filter: blur(10px) brightness(0.8);
+  display: none; 
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-conteudo {
+  background: rgba(1, 15, 43, 0.95);
+  border: 1px solid rgba(245, 245, 220, 0.15);
+  padding: 35px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 550px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.modal-titulo {
+  font-family: "Chonburi", serif;
+  font-size: 28px;
+  color: #f5f5dc;
+  margin-bottom: 20px;
+}
+
+.modal-subtitulo {
+  font-family: "Chonburi", serif;
+  font-size: 18px;
+  color: #f5f5dc;
+  margin-bottom: 12px;
+}
+
+.modal-texto, .modal-contatos p {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.modal-contatos a {
+  color: #64b5f6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.modal-contatos a:hover {
+  text-decoration: underline;
+}
+
+.modal-divisor {
+  width: 100%;
+  border-bottom: 1px solid rgba(245, 245, 220, 0.15);
+  margin: 25px 0;
+}
+
+.fechar-modal {
+  color: #a0aec0;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.fechar-modal:hover {
+  color: #f5f5dc;
+}
+
+.modal-botoes-rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+  gap: 15px;
+}
+
+.modal-link-secundario {
+  font-family: "Inter", sans-serif;
+  color: #a0aec0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.modal-link-secundario:hover {
+  color: #ffffff;
+}
+
+.animate-modal {
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.btn-more{
+border: 1px solid rgba(245, 245, 220, 0.4);
+}

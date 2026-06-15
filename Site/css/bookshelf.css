@@ -1,0 +1,58 @@
+/* ==========================================================================
+   ESTILIZAÇÃO DA PÁGINA DE ESTANTE (ESTADO VAZIO)
+   ========================================================================== */
+
+.bookshelf-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 140px); /* Desconta a altura da header e navegação */
+  width: 100%;
+}
+
+.bookshelf-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.empty-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: 0 auto; /* Mantém centralizado horizontalmente se a tela for muito larga */
+}
+
+.empty-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 24px;
+  opacity: 0.4;
+}
+
+.empty-icon path {
+  stroke: #8a99ad;
+}
+
+.empty-headline {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #8a99ad; 
+  margin-bottom: 12px;
+}
+
+.empty-subtext {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #52667d;
+  line-height: 1.6;
+  max-width: 480px;
+}

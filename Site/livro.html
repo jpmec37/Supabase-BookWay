@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A ler - Bookway</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./css/livro.css">
+</head>
+<body>
+
+    <header class="leitura-header">
+        <button class="btn-voltar" onclick="window.history.back()">
+            ❮ Voltar
+        </button>
+        
+        <div class="livro-titulo-topo" id="topo-titulo-livro">A carregar...</div>
+        
+        <div class="info-leitura">
+            <span id="relogio">00:00</span>
+        </div>
+    </header>
+
+    <main class="leitura-container">
+        <div class="leitura-conteudo" id="area-de-leitura">
+            
+            <h2 id="capitulo-titulo">A carregar capítulo...</h2>
+            
+            <div class="painel-ferramentas">
+                <div class="controles-fonte">
+                    <button class="btn-ferramenta" onclick="mudarFonte(-2)">A-</button>
+                    <button class="btn-ferramenta" onclick="mudarFonte(2)">A+</button>
+                </div>
+                <div class="controles-paginacao">
+                    <button id="btn-ant" class="btn-ferramenta" onclick="mudarPagina(-1)">❮ Anterior</button>
+                    <span id="indicador-pagina">Página 1 de 4</span>
+                    <button id="btn-prox" class="btn-ferramenta" onclick="mudarPagina(1)">Próxima ❯</button>
+                </div>
+            </div>
+
+            <div id="texto-da-historia" class="leitura-texto-container">
+                <p>A carregar o conteúdo da obra...</p>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

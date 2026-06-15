@@ -1,0 +1,346 @@
+/* ==========================================
+   HEADER DO PERFIL (BANNER E FOTO)
+   ========================================== */
+.profile-header-container {
+  background-color: #011733; /* Fundo do seu tema original */
+  border-radius: 10px;
+  border: 1px solid #1a2942;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.profile-banner-bg {
+  object-fit: cover;
+  height: 180px;
+  position: relative;
+}
+
+.profile-banner-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-header-content {
+  display: flex;
+  padding: 0 40px 40px 40px;
+  position: relative;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.profile-avatar-wrapper {
+  margin-top: -80px; /* Puxa a foto para cima do banner */
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.profile-avatar-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 1000px;
+  border: 6px solid #011733; /* Borda grossa da cor do fundo para recortar o banner */
+  background-color: #011733;
+  object-fit: cover;
+}
+
+.profile-user-details {
+  margin-top: 15px;
+  color: #f5f5dc;
+}
+
+.profile-name {
+  font-size: 30px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  color: #f5f5dc;
+}
+
+.profile-email {
+  font-size: 18px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 200;
+  color: #c5c3c3;
+  margin: 0 0 15px 0;
+}
+
+.profile-bio {
+  font-size: 14px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 200;
+  color: #f5f5dc;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+  max-width: 800px;
+}
+
+.profile-badges {
+  display: flex;
+  gap: 10px;
+}
+
+.badge {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #c5c3c3;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.badge.highlight {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+/* ==========================================
+   SEÇÃO DE OBRAS FAVORITAS (SEU DESIGN)
+   ========================================== */
+.row {
+  margin-bottom: 40px;
+}
+
+.row h1 {
+  font-size: 25px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  margin-bottom: 10px;
+  color: #f5f5dc;
+}
+
+.secao-horizontal {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.book-row {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 26px;
+  padding: 10px;
+}
+
+/* Oculta barra de rolagem mas mantém funcional */
+.book-row::-webkit-scrollbar {
+  display: none;
+}
+
+.book {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+  flex: 0 0 200px;
+  height: 260px;
+  transition: all 0.2s ease;
+}
+
+.book:hover {
+  box-shadow: 0 0 15px rgba(0, 68, 204, 0.6);
+  transform: scale(1.01);
+}
+
+.book img {
+  width: 200px;
+  height: 260px;
+  display: block;
+  object-fit: cover;
+}
+
+.card-overlay {
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  padding: 10px;
+  color: #f5f5dc;
+  background: rgba(0, 5, 53, 0.2);
+  backdrop-filter: blur(30px) brightness(0.7);
+  box-sizing: border-box;
+}
+
+.book-progress {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  height: 4px;
+  margin-top: 6px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #1e40af);
+  border-radius: 10px;
+}
+
+/* ==========================================
+   BOTÕES DE SCROLL (SEU DESIGN)
+   ========================================== */
+.btn-scroll-left,
+.btn-scroll-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(7, 25, 47, 0.85);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-scroll-left {
+  left: 5px;
+}
+.btn-scroll-right {
+  right: 5px;
+}
+
+.btn-scroll-left:hover,
+.btn-scroll-right:hover {
+  background-color: rgb(39, 97, 255);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* ==========================================
+   RESPONSIVIDADE (MOBILE)
+   ========================================== */
+@media (max-width: 768px) {
+  .profile-header-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px 30px 20px;
+  }
+  .profile-avatar-wrapper {
+    margin-top: -100px;
+  }
+  .profile-badges {
+    justify-content: center;
+  }
+  .btn-scroll-left,
+  .btn-scroll-right {
+    display: none;
+  }
+}
+
+/* ==========================================
+   LENDO ATUALMENTE
+   ========================================== 
+*/
+
+.currently-reading-card {
+  display: flex;
+  background-color: #011733; /* Fundo padrão dos seus cards */
+  border: 1px solid #1a2942;
+  border-radius: 10px;
+  padding: 20px;
+  gap: 25px;
+  transition: border-color 0.3s ease;
+}
+
+.cr-cover {
+  width: 140px;
+  height: 200px;
+  border-radius: 5px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.cr-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cr-info h3 {
+  font-family: "Bricolage Grotesque", sans-serif;
+  color: #f5f5dc;
+  font-size: 24px;
+  margin: 0 0 5px 0;
+}
+
+.cr-info p {
+  color: #c5c3c3;
+  font-size: 15px;
+  margin: 0 0 25px 0;
+}
+
+.cr-progress-container {
+  margin-bottom: 25px;
+  max-width: 400px;
+}
+
+.cr-stats {
+  display: flex;
+  justify-content: space-between;
+  color: #f5f5dc;
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+
+
+/* ==========================================
+   ESTATÍSTICAS DE LEITURA
+   ========================================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background-color: #011733;
+  border: 1px solid #1a2942;
+  border-radius: 10px;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.stat-number {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #f5f5dc;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  color: #c5c3c3;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsividade Mobile para essas novas seções */
+@media (max-width: 768px) {
+  .currently-reading-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .cr-info { align-items: center; }
+  .cr-progress-container { width: 100%; }
+}

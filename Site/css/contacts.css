@@ -1,0 +1,105 @@
+
+/* ==========================================================================
+   CONTAINER PRINCIPAL E ESTRUTURA DE CONTEÚDO
+   ========================================================================== */
+.container {
+  margin-top: 105px; 
+  /* Garante que o container NUNCA passe do limite da tela menos a sidebar */
+  width: calc(100% - 240px);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  align-items: center;
+  justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.container .conteudo {
+    justify-content: space-between;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    justify-content: center;
+    min-height: 800px;
+}
+
+.contact-container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 20px;
+    min-width: 250px;
+    max-width: 400px;
+    text-align: left;
+}
+
+.contact-container1 h1 {
+    font-family: "Chonburi", serif;
+    font-size: 34px;
+    color: #f5f5dc;
+}
+
+.contact-container1 p{
+    margin-bottom: 10px;
+      font-family: inter, sans-serif;
+      color: #f5f5dc;
+}
+
+.contact-container1 a {
+    color: #2a7bfd;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: inter, sans-serif;
+
+}
+.contact-container1 a:hover {
+    color: #004cff;
+}
+
+.contact-bttn {
+    background-color: #0154da;
+    width: 200px;
+    border: none;
+    color: #f5f5dc;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.contact-bttn:hover {
+    background-color: #0033aa;
+}
+
+.contact-container2 {
+    min-width: 100px;
+    margin-right: 100px
+}
+.contact-container2 h3 {
+    font-size: 17px;
+    color: #f5f5dc;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.info-vetor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.info-vetor img:hover{
+  filter: brightness(0) saturate(100%) invert(75%) sepia(13%) saturate(464%) hue-rotate(42deg) brightness(94%) contrast(85%);
+}

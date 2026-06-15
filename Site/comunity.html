@@ -1,0 +1,137 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookWay — Comunidades</title>
+
+    <!-- Tipografia inspirada no BookWay (home.html/base.css) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/comunity.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+
+    <script src="./JS/comunity.js" defer></script>
+    <!-- modal.js é separado (lógica) -->
+    <script src="./JS/modal.js" defer></script>
+
+    <!-- favicon opcional (se você tiver) -->
+  </head>
+
+  <body>
+    <div class="bw-app">
+      <aside class="bw-sidebar">
+        <div class="bw-brand">
+          <!-- Logo textual BookWay (sem copiar layout) -->
+          <div class="bw-logo">
+            <img src="./imagens/logo.jpg" class="bw-logo-mark" aria-hidden="true" />
+            <span class="bw-logo-text">BookWay</span>
+          </div>
+        </div>
+
+        <div class="bw-create">
+          <button id="btn-open-create" class="bw-create-btn" type="button">
+            <!-- ícone de + em SVG -->
+            <svg
+              class="bw-create-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            <div class="bw-create-info">
+              <div class="bw-create-title">Criar Comunidade</div>
+              <div class="bw-create-sub">Converse por tema</div>
+            </div>
+          </button>
+        </div>
+
+        <nav class="bw-communities" aria-label="Lista de comunidades">
+          <ul id="bw-community-list" class="bw-community-list"></ul>
+        </nav>
+
+        <div class="bw-footer-mini" aria-hidden="true">
+          <div class="bw-user-pill">
+            <div class="bw-user-avatar"><img src="./imagens/DanDaDan.png" alt="Avatar do usuário" id="imgpessoa"/></div>
+            <div class="bw-user-label">Você</div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="bw-main">
+        <header class="bw-chat-header">
+          <a class="bw-home-back" href="../Site/home.html" title="Voltar para a home.html">
+            <!-- seta esquerda em SVG -->
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+            <span>Home</span>
+          </a>
+          <div class="bw-chat-meta">
+            <div class="bw-chat-title" id="bw-chat-title">Carregando...</div>
+            <div class="bw-chat-desc" id="bw-chat-desc">Selecione uma comunidade.</div>
+          </div>
+
+          <div class="bw-chat-theme">
+            <div class="bw-theme-chip" title="Cor da comunidade">
+              <span id="bw-theme-dot" class="bw-theme-dot"></span>
+              <span id="bw-theme-name" class="bw-theme-name">Tema</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Posts da comunidade (estilo YouTube: thumbnail + enquete simples) -->
+        <section class="bw-posts" id="bw-community-posts" aria-label="Posts da comunidade">
+          <div class="bw-posts-empty" id="bw-posts-empty">Carregando posts...</div>
+          <div class="bw-posts-grid" id="bw-posts-grid" style="display:none"></div>
+        </section>
+
+        <section class="bw-chat" id="bw-chat-messages" aria-label="Mensagens"></section>
+
+
+        <footer class="bw-chat-input-wrap">
+          <form id="bw-message-form" class="bw-chat-form">
+            <input
+              id="bw-message-input"
+              type="text"
+              placeholder="Escreva algo em BookWay..."
+              autocomplete="off"
+              required
+              maxlength="600"
+            />
+            <button type="submit" id="bw-send-btn" class="bw-send-btn" title="Enviar">
+              <!-- ícone de envio -->
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                class="bw-send-icon"
+              >
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              <span class="sr-only">Enviar</span>
+            </button>
+          </form>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
+
