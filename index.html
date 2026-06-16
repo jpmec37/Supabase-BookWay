@@ -22,9 +22,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookway</title>
-    <link rel="stylesheet" href="./css/base.css" />
-    <link rel="stylesheet" href="./css/quests.css" />
-    <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="./Site/css/base.css" />
+    <link rel="stylesheet" href="./Site/css/home.css" />
+    <link rel="stylesheet" href="./Site/css/modal.css" />
   </head>
   <body>
     <aside class="blateral">
@@ -33,10 +33,10 @@
       </div>
       <div class="side-bttns">
         <ul>
-          <li>
-            <a href="../index.html">
+          <li class="active">
+            <a href="./index.html">
               <img
-                src="./imagens/Vetores/PaginaInicialVetor.svg"
+                src="./Site/imagens/Vetores/PaginaInicialVetor.svg"
                 class="sidebar-icon"
                 alt="Inicial"
               />
@@ -45,9 +45,9 @@
           </li>
 
           <li>
-            <a href="comunity.html">
+            <a href="./Site/comunity.html">
               <img
-                src="./imagens/Vetores/ComunidadeVetor.svg"
+                src="./Site/imagens/Vetores/ComunidadeVetor.svg"
                 class="sidebar-icon"
                 alt="Comunidade"
               />
@@ -55,10 +55,10 @@
             </a>
           </li>
 
-          <li class="active">
-            <a href="quests.html">
+          <li>
+            <a href="./Site/quests.html">
               <img
-                src="./imagens/Vetores/DesafiosVetor.svg"
+                src="./Site/imagens/Vetores/DesafiosVetor.svg"
                 class="sidebar-icon"
                 alt="Desafios"
               />
@@ -66,9 +66,9 @@
             </a>
           </li>
           <li>
-            <a href="./settings.html">
+            <a href="./Site/settings.html">
               <img
-                src="./imagens/Vetores/ConfiguracoesVetor.svg"
+                src="./Site/imagens/Vetores/ConfiguracoesVetor.svg"
                 class="sidebar-icon"
                 alt="Configurações"
               />
@@ -76,9 +76,9 @@
             </a>
           </li>
           <li class="expand-only item-usuario">
-            <a href="user.html">
+            <a href="./Site/user.html">
               <img
-                src="/Site/imagens/User.jpg"
+                src="./Site/imagens/User.jpg"
                 alt="Logo"
                 class="sidebar-icon user-avatar"
               />
@@ -86,9 +86,9 @@
             </a>
           </li>
           <li class="expand-only">
-            <a href="./bookshelf.html" class="">
+            <a href="./Site/bookshelf.html" class="">
               <img
-                src="./imagens/Vetores/EstanteVetor.svg"
+                src="./Site/imagens/Vetores/EstanteVetor.svg"
                 class="sidebar-icon"
                 alt="Configurações"
               />
@@ -101,7 +101,7 @@
         <a href="#" id="btn-abrir-meu-modal" class="create-comunity" style="position: relative; z-index: 999999;">
 
           <img
-            src="./imagens/Vetores/ComunidadeVetor.svg"
+            src="./Site/imagens/Vetores/ComunidadeVetor.svg"
             class="sidebar-icon"
             alt="Ícone"
           />
@@ -112,10 +112,10 @@
  </a>
        </div>
        <div class="logout">
-         <a href="singin.html"
+         <a href="./Site/singin.html"
            ><button class="bttn-logout">
              <img
-               src="./imagens/Vetores/SignOutVetor.svg"
+               src="./Site/imagens/Vetores/SignOutVetor.svg"
                alt=""
                class="sidebar-icon"
              /></button
@@ -125,16 +125,16 @@
      <main class="container">
        <header class="header">
          <div>
-           <a href="../index.html" id="logo">
+           <a href="./index.html" id="logo">
              <img
-               src="/Site/imagens/logo.jpg"
+               src="./Site/imagens/logo.jpg"
                alt="Logo"
                width="40"
                height="40"
                id="imglogo"
              />
              <img
-               src="/Site/imagens/bookway.png"
+               src="./Site/imagens/bookway.png"
                alt="Logo"
                width="140"
                height="29"
@@ -161,7 +161,7 @@
              <a href="#" id="txt-user">
                <p>45</p>
                <img
-                 src="./imagens/Vetores/FireVetor.svg"
+                 src="./Site/imagens/Vetores/FireVetor.svg"
                  alt="Logo"
                  width="20"
                  height="20"
@@ -173,7 +173,7 @@
            <div id="g-icon-user">
              <a href="#">
                <img
-                 src="/Site/imagens/User.jpg"
+                 src="./Site/imagens/User.jpg"
                  alt="Logo"
                  width="40"
                  height="40"
@@ -188,18 +188,103 @@
          <div class="ul-nav">
            <ul>
              <li>
-               <a href="helpcenterhome.html"><span>Central de Ajuda</span></a>
+               <a href="./Site/helpcenterhome.html"><span>Central de Ajuda</span></a>
              </li>
              <li>
-               <a href="about.html"><span>Sobre</span></a>
+               <a href="./Site/about.html"><span>Sobre</span></a>
              </li>
              <li>
-               <a href="contacts.html"><span>Contato</span></a>
+               <a href="./Site/contacts.html"><span>Contato</span></a>
              </li>
              <li>
-               <a href="premium.html"><span>Premium</span></a>
+               <a href="./Site/premium.html"><span>Premium</span></a>
              </li>
            </ul>
          </div>
          <div></div>
        </nav>
+       <section class="conteudo">
+         <div class="hero-carousel" id="hero-carousel">
+           <div class="hero-carousel-track" id="hero-track">
+             <div class="hero-slide">
+               <img
+                 src="./Site/imagens/LendoLivro.jpg"
+                 alt="Destaque 1"
+               />
+               <div class="hero-content">
+                 <span class="hero-badge">DESCUBRA</span>
+                 <h2>Milhares de histórias em um só lugar</h2>
+                 <p>
+                   Explore um catálogo repleto de livros para todos os gostos. Encontre novos autores, acompanhe suas leituras e mergulhe em histórias inesquecíveis. Experimente 30 dias grátis[...]
+                 </p>
+               </div>
+             </div>
+
+             <div class="hero-slide">
+               <img
+                 src="./Site/imagens/Biblioteca1.jpg"
+                 alt="Destaque 2"
+               />
+               <div class="hero-content">
+                 <span class="hero-badge">LEIA</span>
+                 <h2>Sua próxima grande leitura começa aqui</h2>
+                 <p>
+                   Dos clássicos aos lançamentos, encontre livros que combinam com você. Organize suas leituras e descubra novas aventuras a cada página. Experimente 30 dias grátis.
+                 </p>
+               </div>
+             </div>
+
+             <div class="hero-slide">
+               <img
+                 src="./Site/imagens/EscolhendoLivro.jpg"
+                 alt="Destaque 3"
+               />
+               <div class="hero-content">
+                 <span class="hero-badge">EXPLORE</span>
+                 <h2>Um universo de livros ao seu alcance</h2>
+                 <p>
+                   Navegue por diferentes gêneros, descubra recomendações personalizadas e encontre histórias que vão prender sua atenção do início ao fim. Experimente 30 dias grátis.
+                 </p>
+               </div>
+             </div>
+
+             <div class="hero-slide">
+               <img
+                 src="./Site/imagens/LendoLuzQuente.jpg"
+                 alt="Destaque 4"
+               />
+               <div class="hero-content">
+                 <span class="hero-badge">MERGULHE</span>
+                 <h2>Histórias que acompanham você</h2>
+                 <p>
+                   Descubra livros incríveis, salve seus favoritos e encontre sua próxima leitura em poucos cliques. Tudo o que você precisa para ler mais e melhor. Experimente 30 dias grátis.
+                 </p>
+               </div>
+             </div>
+           </div>
+
+           <div class="hero-controls">
+             <button class="hero-arrow" id="hero-prev">
+               <img
+                 src="./Site/imagens/Vetores/SetaEsquerdaVetor.svg"
+                 alt="Anterior"
+                 class="sidebar-icon"
+               />
+             </button>
+
+             <div class="hero-indicators" id="hero-indicators"></div>
+
+             <button class="hero-arrow" id="hero-next">
+               <img
+                 src="./Site/imagens/Vetores/SetaDireitaVetor.svg"
+                 alt="Próximo"
+                 class="sidebar-icon"
+               />
+             </button>
+           </div>
+         </div>
+       </section>
+     </main>
+     <script src="./Site/JS/script.js"></script>
+  </body>
+</html>
